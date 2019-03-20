@@ -113,7 +113,3 @@ const month = 3;
 const year = 1800;
 
 console.log(`${date}\\${month}\\${year}`);
-
-if (userChoice !== null && userChoice !== '') {
-  alert;
-}
