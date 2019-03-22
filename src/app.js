@@ -1,115 +1,153 @@
 'use strict';
 
-// const value = 20.5;
+/*
+ * Логические операторы
+ */
+// const min = 10;
+// const max = 30;
+// const value = 25;
 
-// const name = 'Mango';
+// const isInRange = value > 10 && value < 30; // false
 
-// let isActive = false;
+// const isInRange = value < 10 || value > 30;
 
-// const hasChildNodes = false;
+// console.log(isInRange);
+// //
 
-// const type = typeof isActive;
+// console.log(0 || null || 3 || 5);
 
-// ===============================
+// 1 && 0 && 2
 
-// const isGoing = confirm('Вы точно летите отдыхать?');
+// console.log(1 && 2 && 3 && 4 && false && 6);
 
-// console.log(isGoing);
+// console.log(1 && null && 2);
 
-// ===============================
+// console.log(false && true);
 
-// const input = prompt('Введите ваше имя!');
+// const isAfk = true;
+// const isActive = true;
 
-// console.log(typeof input);
+// const passed = !isAfk && isActive;
+
+// не афк && активные
+
+/*
+ * Ветвления
+ */
 
 // const min = 10;
 // const max = 30;
-// const number = 45;
+// const value = 125;
+// let message;
 
-// const isNumberInRange = number > min && number < max;
+// const isInRange = value > 10 && value < 30;
 
-// console.log(isNumberInRange);
+// if (isInRange) {
+//   message = 'Number is in range!!!! Awesome!';
+// } else {
+//   message = 'Number is not in range!!!! Booooo!';
+// }
 
-// ===============================
+// console.log(message);
 
-// let input = prompt('Угадай число от 1 до 10'); // '5'
+// ==========
+// const min = 10;
+// const max = 30;
+// const value = 1125;
+// let message;
 
-// console.log('input перед преобразованием: ', input);
+// if (value < 10) {
+//   message = 'Less then 10';
+// } else if (value > 20 && value < 50) {
+//   message = 'Greater then 20 and less then 50';
+// } else if (value > 60 && value < 80) {
+//   message = 'Greater then 60 and less then 80';
+// } else {
+//   message = ':(';
+// }
 
-// input = Number(input);
+// console.log(message);
 
-// const isNaN = Number.isNaN(input);
+/*
+ * Ternary
+ */
 
-// console.log('input после преобразования: ', input);
-// console.log('isNaN?: ', isNaN);
+// const isActive = true;
 
-// const isCorrect = input >= 1 && input <= 10;
+// let message;
 
-// =======================================
-// console.log(isCorrect);
+// if (isActive) {
+//   message = 'Active!';
+// } else {
+//   message = 'Inactive!';
+// }
 
-// const boxWidthInPx = '25.5px';
+// console.log(message);
 
-// const width = Number.parseFloat(boxWidthInPx);
+// const message = isActive ? 'Active' : 'Inactive!';
 
-// console.log(width);
+// console.log(message);
 
-// console.log((0.2 * 100 + 0.1 * 100) / 100);
+/*
+ * Scope
+ */
 
-// =======================================
+// const a = 5;
 
-// const number = Math.floor(2.6);
+// if (15 > 10) {
+//   console.log(a);
+//   const message = 'Hello!';
+// }
 
-// console.log(number);
+// console.log(message);
 
-// =======================================
+/*
+ * Switch
+ */
 
-const firstName = 'Jay';
-const lastName = 'Lux';
-const fullName = `${firstName} ${lastName}`;
+// const TAKEOUT = 0;
+// const COURIER = 1;
+// const POST = 2;
 
-console.log(fullName);
+// const promptLabel = `Выбери опцию доставки: ${TAKEOUT} - самовывоз, ${COURIER} - курьер, ${POST} - почта`;
+// let userChoise = prompt(promptLabel);
+// let message;
 
-const name = 'Mango';
-const age = 2;
-const mood = 'happy';
+// if (userChoise === null) {
+//   message = 'Очень жаль, приходите еще';
+// } else {
+//   userChoise = Number(userChoise);
 
-// My name is [name], I'm [age] years old and [mood].
+//   switch (userChoise) {
+//     case TAKEOUT:
+//       message = 'Ну и вывози сам, жлоб!';
+//       break;
 
-// const message =
-//   'My name is ' + name + ", I'm " + age + ' years old and ' + mood + '.';
+//     case COURIER:
+//       message = 'Супер, за лишние деньги тебе все доставят!';
+//       break;
 
-const message = `My name is ${name}, I'm ${age} years old and ${mood}.`;
+//     case POST:
+//       message = 'Посылка придет завтра!';
+//       break;
 
-console.log(message);
+//     default:
+//       message = 'Ничего не выбрано!';
+//   }
+// }
 
-// =======================================
+// console.log(message);
 
-// const productTitle = 'Samsung is cool';
-// const searchString = 'samS';
+// ======== Task 6
+// const result = prompt('');
 
-// const inLowerCase = title.toLowerCase();
-// const inUpperCase = title.toUpperCase();
+// if (result === null) {
+//   console.log('null');
+// } else if (Number.isInteger(Number(result))) {
+//   console.log('int');
+// } else {
+//   console.log('rest');
+// }
 
-// console.log(inLowerCase);
-// console.log(inUpperCase);
-// console.log(title);
+// Number(result) % 1 === 0
 
-// const titleInLC = productTitle.toLowerCase();
-// const searchStringInLC = searchString.toLowerCase();
-
-// const passed = titleInLC.includes(searchStringInLC);
-
-// console.log(passed);
-
-// console.log();
-
-// console.log(title.includes('Java'));
-
-// ========
-
-const date = 10;
-const month = 3;
-const year = 1800;
-
-console.log(`${date}\\${month}\\${year}`);
