@@ -1,153 +1,170 @@
 'use strict';
 
-// const product = {
-//   name: 'Wunder Waffles',
-//   description: 'In hac habitasse platea dictumst.',
-//   price: 30,
+/*
+ * Spread массивов - массив чисел + add + Math.min или max
+ */
+
+// const numbers = [1, 2, 3, -7, 8, -19];
+
+// console.log(Math.min(...numbers));
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// const copyOfNumbers = numbers.slice();
+// const copyOfNumbers = [...numbers];
+
+// console.log(numbers === copyOfNumbers);
+// console.log(copyOfNumbers);
+
+/*
+ * Spread обьектов
+ */
+
+/*
+ * Spread обьектов - настройки пользователя default + update = settings
+ */
+
+// const defaultSettings = {
+//   theme: 'light',
+//   showNavbar: true,
+//   isHidden: false,
 // };
 
-// const key = 'name';
-
-// console.log(product.name);
-// console.log(product[key]);
-
-// product.price = 50;
-
-// console.log(product.qwe);
-
-// Shorthand proprties
-// const makeProduct = (name, price) => {
-//   // return {
-//   //   name: name,
-//   //   price: price,
-//   // };
-
-//   return {
-//     name,
-//     price,
-//     id: 1,
-//   };
+// const update = {
+//   theme: 'dark',
+//   showNavbar: false,
 // };
 
-// console.log(makeProduct('Apples', 50));
+// const currentSettings = Object.assign({}, defaultSettings, update);
 
-// Computed properties
-// const key = 'name';
-// const value = 10;
-
-// const obj = {
-//   a: 1,
-//   [`key value ${2 + 2}`]: value,
+// const currentSettings = {
+//   ...defaultSettings,
+//   ...update,
 // };
 
-// // obj[key] = value;
+// console.log(currentSettings);
+/*
+ * Деструктуризация объектов
+ */
 
-// console.log(obj);
-
-// input name="login" value="mango"
-// input name="email" value="mail@mail.com"
-
-// const target = {
-//   name: 'email',
-//   value: 'mail@mail.com',
+// const user = {
+//   name: 'Mango',
+//   room: 24,
 // };
 
-// const formData = {
-//   [target.name]: target.value,
+// const room = user.room;
+// const type = user.type;
+// const type = user.type;
+
+// const { room, type, name } = user;
+// const message = `Гость ${name} прибивает как ${type} в комнату ${room}`;
+// console.log(message);
+
+// const greeter = ({ room, type = 'regular', name } = {}) => {
+//   // const { room, type = 'regular', name } = user;
+
+//   return `Гость ${name} прибивает как ${type} в комнату ${room}`;
 // };
 
-// console.log(formData);
+// console.log(greeter(user));
 
-// const product = {
-//   name: 'Wunder Waffles',
-//   description: 'In hac habitasse platea dictumst.',
-//   price: 30,
-//   changePrice(newPrice) {
-//     console.log('this: ', this);
-//     this.price = newPrice;
+/*
+ * Глубокая деструктуризация
+ */
+
+// const profile = {
+//   name: 'Mango',
+//   email: 'mango@mail.com',
+//   address: {
+//     name: 'Address name prop',
+//     city: 'Zimbabwe',
+//     country: 'Ukraine',
+//     street: 'Some street',
 //   },
 // };
 
-// product.changePrice(100);
+// const { name: profileName } = profile;
 
-// console.log(product.price);
+// console.log(profileName);
 
-// Работа с коллекцией
-// const storage = {
-//   items: [
-//     { id: 'id-1', name: 'apples', price: 30 },
-//     { id: 'id-2', name: 'grapes', price: 40 },
-//   ],
-//   getItems() {
-//     return this.items;
-//   },
-//   addProduct(product) {
-//     this.items.push(product);
-//   },
-//   removeProduct(id) {
-//     for (let i = 0; i < this.items.length; i += 1) {
-//       const product = this.items[i];
+// const {
+//   name,
+//   email,
+//   address: { city, country, street, name: addressName },
+// } = profile;
+// const { city, country, street } = address;
 
-//       if (product.id === id) {
-//         console.log('i: ', i);
-//         console.log('product: ', product);
-//         this.items.splice(i, 1);
-//       }
-//     }
-//   },
+// console.log(addressName);
+// console.log(profile.address.name)
+
+// console.log(city);
+
+/*
+ * Деструктуризация массивов - показать пример с полями формы из elements
+ */
+
+// const form = document.querySelector('.form');
+
+// const input = form.elements[0];
+// const textarea = form.elements[1];
+// const [input, textarea] = form.elements;
+
+// console.log(input);
+
+// console.log(textarea);
+
+/*
+ * Деструктуризация массивов - показать пример с перебором Object.entries
+ */
+
+// const tasks = {
+//   ann: 30,
+//   boris: 50,
+//   valera: 99,
 // };
 
-// console.table(storage.getItems());
+// const entries = Object.entries(tasks);
 
-// storage.addProduct({ id: 'id-3', name: 'carrots', price: 20 });
+// // console.table(entries);
 
-// console.table(storage.getItems());
+// console.log(entries);
 
-// storage.removeProduct('id-1');
+// for (const [name, value] of entries) {
+//   // const name = entry[0];
+//   // const value = entry[1];
+//   console.log(name, value);
+// }
 
-// console.table(storage.getItems());
+// const numbers = [1, 2, 3, 4, 5];
 
-// for...in
+// const [value1, ...rest] = numbers;
 
-// const product = {
-//   name: 'waffles',
-//   price: 50,
-//   quantity: 20,
+// console.log(value1, rest);
+
+// const { a, ...rest } = { a: 1, b: 2, c: 3 };
+
+// console.log(a);
+// console.log(rest);
+
+// const x = {
+//   y: 5,
+//   ...{ g: 6, i: 9 },
 // };
 
-// for (const key in product) {
-//   console.log(`key: ${key}, value: ${product[key]}`);
-// }
+// const fn = function(...rest) {};
 
-// const keys = Object.keys(product);
-// console.log(keys);
+// fn(...[1, 2, 3, 4, 5]);
 
-// for (const key of keys) {
-//   console.log(`key: ${key}, value: ${product[key]}`);
-// }
+// const gallery = ({
+//   selector,
+//   slides = [],
+//   delay = 250,
+//   activeSlide = 1,
+// } = {}) => {};
 
-// const salary = {
-//   bob: 100,
-//   mary: 200,
-//   dick: 300,
-// };
-
-// let total = 0;
-
-// for (const key in salary) {
-//   console.log(`key: ${key}, value: ${salary[key]}`);
-
-//   total += salary[key];
-// }
-
-// console.log('total: ', total);
-
-// const salaryValues = Object.values(salary);
-// console.log(salaryValues);
-
-// for (const value of salaryValues) {
-//   total += value;
-// }
-
-// console.log('total: ', total);
+// gallery({
+//   selector: '.gallery',
+//   slides: [],
+//   delay: 200,
+// });
 
