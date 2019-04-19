@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>JS Essentials</title>
+    <style>
+      p {
+        font-family: monospace;
+        font-size: 40px;
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
-    <button>Click me!</button>
-    <script src="index.js"></script>
+    <div>
+      <p class="js-counter-value">0</p>
+
+      <div>
+        <button data-action="increment">Increment</button>
+        <button data-action="decrement">Decrement</button>
+      </div>
+    </div>
+    <!-- <script src="js/index.js"></script> -->
+    <script src="js/counter.js"></script>
   </body>
 </html>
