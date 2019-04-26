@@ -1,36 +1,48 @@
 'use strict';
 
-const Hero = function(name, xp) {
-  this.name = name;
-  this.xp = xp;
-};
+class Hero {
+  constructor(name, xp) {
+    this.name = name;
+    this.xp = xp;
+  }
 
-Hero.prototype.gainXp = function(amount) {
-  console.log(`${this.name} gained ${amount} experience points`);
-  this.xp += amount;
-};
+  gainXp(amount) {
+    console.log(`${this.name} gained ${amount} experience points`);
+    this.xp += amount;
+  }
+}
 
-const Warrior = function(name, xp, weapon) {
-  // this = Object.create(Warrior.prototype);
-  Hero.call(this, name, xp);
+class Warrior extends Hero {
+  constructor(name, xp, weapon) {
+    super(name, xp);
+    this.weapon = weapon;
+  }
 
-  // this: {name: 'Mango', xp: 1000}
+  attack() {
+    console.log(`${this.name} attacks with ${this.weapon}`);
 
-  this.weapon = weapon;
-};
+    super.gainXp(10);
+  }
+}
 
-Warrior.prototype = Object.create(Hero.prototype);
-// {__proto__: Hero.prototype}
-
-Warrior.prototype.constructor = Warrior;
-// {__proto__: Hero.prototype, constructor: Warrior}
-
-Warrior.prototype.attack = function() {
-  console.log(`${this.name} attacks with ${this.weapon}`);
-};
-
-const mango = new Warrior('Mango', 1000, 'halberd');
-
+const mango = new Warrior('Mango', 1000, 'axe');
 console.log(mango);
+mango.attack();
 
-mango.gainXp(2000);
+class Berserk extends Warrior {
+  constructor(name, xp, weapon, roar) {
+    super(name, xp, weapon);
+
+    this.roar = roar;
+  }
+
+  battlecry() {
+    console.log(this.roar);
+  }
+}
+
+const poly = new Berserk('Poly', 1000, 'halberd', 'Waaaaaaaaah!');
+
+console.log(poly);
+
+poly.battlecry();

@@ -1,60 +1,45 @@
 'use strict';
 
-const animal = {
-  barks: true,
-};
+class Hero {
+  static randomProp = 'random prop value';
 
-// const dog = {
-//   sound: 'woof',
-// };
-// dog.__proto__ = animal;
+  static doStuff() {}
 
-const dog = Object.create(animal);
-dog.sound = 'woof';
+  constructor(name, xp) {
+    this._name = name;
+    this.xp = xp;
+  }
 
-console.log('dog: ', dog);
+  // Публичное свойство класса
+  // this.a
+  a = 5;
 
-// console.log(dog.sound);
-// console.log(dog.barks);
-// console.log('dog.hasOwnProperty("sound"): ', dog.hasOwnProperty('sound'));
-// console.log('dog.hasOwnProperty("barks"): ', dog.hasOwnProperty('barks'));
-// console.log(dog.qwe);
+  //this.gainXp
+  gainXp = amount => {
+    this.xp += amount;
+    console.log(this.xp);
+  };
 
-// for (const key in dog) {
-//   if (!dog.hasOwnProperty(key)) continue;
+  set name(newName) {
+    this._name = newName;
+  }
 
-//   console.log(key);
-// }
-
-const Hero = function(name, xp) {
-  // this = Object.create(Hero.prototype)
-  this.name = name;
-  this.xp = xp;
-
-  // return this
-};
-
-Hero.prototype.changeName = function(name) {
-  console.log('this: ', this);
-  this.name = name;
-};
-
-console.log('Hero.prototype: ', Hero.prototype);
+  get name() {
+    return this._name;
+  }
+}
 
 const mango = new Hero('Mango', 1000);
-mango.changeName('Mango the great');
+
 console.log(mango);
 
-console.log(
-  'mango.__proto__ === Hero.prototype: ',
-  mango.__proto__ === Hero.prototype,
-);
+console.log(mango.name);
+mango.name = 'Poly';
 
-const poly = new Hero('Poly', 2000);
-poly.changeName('Poly the magnificent');
-console.log(poly);
+console.log(mango.name);
 
-console.log(
-  'poly.__proto__ === Hero.prototype: ',
-  poly.__proto__ === Hero.prototype,
-);
+const fn = function(callback) {
+  callback(1000);
+};
+
+fn(mango.gainXp);
