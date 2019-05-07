@@ -1,0 +1,14 @@
+{
+  "name": "js-group-11-12",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:luxplanjay/js-group-11-12.git",
+  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}
