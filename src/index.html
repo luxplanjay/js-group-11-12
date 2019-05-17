@@ -5,46 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>JavaScript Essentials</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
   <body>
-    <header class="masthead">
-      <ul class="menu">
-        <li class="menu-item"><a href="/">home</a></li>
-        <li class="menu-item"><a href="/about">about</a></li>
-        <li class="menu-item"><a href="/gallery">gallery</a></li>
-        <li class="menu-item"><a href="/blog">blog</a></li>
-      </ul>
+    <!-- BUTTON -->
+    <button type="button" class="button" data-action="login">
+      <i class="material-icons button__icon">verified_user</i>
+      Login
+    </button>
 
-      <button class="button" data-action="magic">
-        Magic!
-      </button>
-    </header>
+    <!-- INPUT -->
+    <section class="input-events-example">
+      <input type="text" class="input" />
+      <p class="output"></p>
+    </section>
 
-    <div class="profile-container"></div>
+    <!-- FORM -->
+    <form class="register-form js-register-form">
+      <label class="label register-form__label">
+        Name
+        <input class="input" name="name" type="text" autocomplete="off" />
+      </label>
 
-    <table class="transaction-table">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Date</th>
-          <th>Business</th>
-        </tr>
-      </thead>
-    </table>
+      <label class="label register-form__label">
+        Email
+        <input class="input" type="email" name="email" autocomplete="off" />
+      </label>
 
-    <img
-      src="https://images.unsplash.com/photo-1557780228-9a7cdb7bb8a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=896&q=80"
-      width="320"
-      alt=""
-      class="unsplash-image"
-    />
+      <label class="label register-form__label">
+        Password
+        <input name="password" type="password" class="input" />
+      </label>
 
-    <script src="./js/q-selectors.js" type="module"></script>
-    <script src="./js/user-profile.js" type="module"></script>
-    <script src="./js/transaction-history.js" type="module"></script>
-    <script src="./js/transactions.js" type="module"></script>
+      <section class="section">
+        <h2 class="section__title">Choose subscription type:</h2>
+        <label class="label section__label">
+          <input class="radio" type="radio" name="subscription" value="free" />
+          Free
+        </label>
+        <label class="label section__label">
+          <input class="radio" type="radio" name="subscription" value="basic" />
+          Basic
+        </label>
+        <label class="label section__label">
+          <input class="radio" type="radio" name="subscription" value="pro" />
+          Pro
+        </label>
+      </section>
+
+      <button class="button" type="submit">Register</button>
+    </form>
+
+    <!-- MODAL -->
+    <button class="button" data-action="open-modal">Open Modal</button>
+
+    <div class="backdrop js-backdrop">
+      <div class="modal">
+        <h2>Modal window</h2>
+        <p>
+          In user interface design for computer applications, a modal window is
+          a graphical control element subordinate to an application's main
+          window. It creates a mode that disables the main window but keeps it
+          visible, with the modal window as a child window in front of it. Users
+          must interact with the modal window before they can return to the
+          parent application. This avoids interrupting the workflow on the main
+          window. Modal windows are sometimes called heavy windows or modal
+          dialogs because they often display a dialog box.
+        </p>
+        <button type="button" class="button" data-action="close-modal">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- <script src="./js/basics.js" type="module"></script> -->
+    <script src="./js/input-events.js" type="module"></script>
+    <script src="./js/form.js" type="module"></script>
+    <script src="./js/modal.js" type="module"></script>
   </body>
 </html>
