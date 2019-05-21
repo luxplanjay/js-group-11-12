@@ -5,87 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>JavaScript Essentials</title>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
   <body>
-    <!-- BUTTON -->
-    <button type="button" class="button" data-action="login">
-      <i class="material-icons button__icon">verified_user</i>
-      Login
-    </button>
+    <header class="masthead">
+      <ul class="nav js-nav">
+        <li class="nav__item">
+          <a href="" class="nav__link">Home</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">Blog</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">Contact</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">About</a>
+        </li>
+      </ul>
+    </header>
 
-    <!-- INPUT -->
-    <section class="input-events-example">
-      <input type="text" class="input" />
-      <p class="output"></p>
-    </section>
+    <hr />
 
-    <!-- FORM -->
-    <form class="register-form js-register-form">
-      <label class="label register-form__label">
-        Name
-        <input class="input" name="name" type="text" autocomplete="off" />
-      </label>
-
-      <label class="label register-form__label">
-        Email
-        <input class="input" type="email" name="email" autocomplete="off" />
-      </label>
-
-      <label class="label register-form__label">
-        Password
-        <input name="password" type="password" class="input" />
-      </label>
-
-      <section class="section">
-        <h2 class="section__title">Choose subscription type:</h2>
-        <label class="label section__label">
-          <input class="radio" type="radio" name="subscription" value="free" />
-          Free
-        </label>
-        <label class="label section__label">
-          <input class="radio" type="radio" name="subscription" value="basic" />
-          Basic
-        </label>
-        <label class="label section__label">
-          <input class="radio" type="radio" name="subscription" value="pro" />
-          Pro
-        </label>
-      </section>
-
-      <button class="button" type="submit">Register</button>
-    </form>
-
-    <!-- MODAL -->
-    <button class="button" data-action="open-modal">Open Modal</button>
-
-    <div class="backdrop js-backdrop">
-      <div class="modal">
-        <h2>Modal window</h2>
-        <p>
-          In user interface design for computer applications, a modal window is
-          a graphical control element subordinate to an application's main
-          window. It creates a mode that disables the main window but keeps it
-          visible, with the modal window as a child window in front of it. Users
-          must interact with the modal window before they can return to the
-          parent application. This avoids interrupting the workflow on the main
-          window. Modal windows are sometimes called heavy windows or modal
-          dialogs because they often display a dialog box.
-        </p>
-        <button type="button" class="button" data-action="close-modal">
-          Close
-        </button>
-      </div>
+    <div class="tags js-tags">
+      <button class="tags__item" data-tag="html">HTML</button>
+      <button class="tags__item" data-tag="css">CSS</button>
+      <button class="tags__item" data-tag="javascript">JavaScript</button>
+      <button class="tags__item" data-tag="npm">NPM</button>
+      <button class="tags__item" data-tag="babel">Babel</button>
+      <button class="tags__item" data-tag="webpack">Webpack</button>
+      <button class="tags__item" data-tag="react">React</button>
+      <button class="tags__item" data-tag="redux">Redux</button>
+      <button class="tags__item" data-tag="node">Node</button>
     </div>
 
-    <!-- <script src="./js/basics.js" type="module"></script> -->
-    <script src="./js/input-events.js" type="module"></script>
-    <script src="./js/form.js" type="module"></script>
-    <script src="./js/modal.js" type="module"></script>
+    <hr />
+
+    <form class="editor js-editor">
+      <input class="editor__input" type="text" name="text" />
+      <button class="button" type="submit">Сохранить</button>
+    </form>
+
+    <ul class="todo-list js-todo-list"></ul>
+
+    <!-- <script src="./js/nav.js" type="module"></script> -->
+    <!-- <script src="./js/tags.js" type="module"></script> -->
+    <script src="./js/todos.js" type="module"></script>
   </body>
 </html>
