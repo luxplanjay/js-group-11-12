@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  display: flex;
+  transform: translate(50%);
+  background-color: #fff;
+  color: #211221;
+}
