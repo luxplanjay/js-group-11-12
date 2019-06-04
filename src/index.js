@@ -1,8 +1,4 @@
-import message from './message';
 import arrow from './arrow';
-import './a.css';
-import './b.css';
-
-console.log(message);
+import './styles.css';
 
 console.log(arrow(5, 10));

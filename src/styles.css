@@ -3,9 +3,11 @@
 }
 
 body {
-  display: grid;
-  display: flex;
-  transform: translate(50%);
   background-color: #fff;
   color: #211221;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
 }
