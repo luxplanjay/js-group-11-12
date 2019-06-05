@@ -46,6 +46,9 @@
     "webpackbar": "^3.2.0"
   },
   "dependencies": {
-    "handlebars": "^4.1.2"
+    "basiclightbox": "^5.0.2",
+    "handlebars": "^4.1.2",
+    "notyf": "^3.0.4",
+    "siema": "^1.5.1"
   }
 }
