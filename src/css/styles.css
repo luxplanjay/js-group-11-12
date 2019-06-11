@@ -12,23 +12,12 @@ html {
 
 body {
   margin: 0;
-  min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #fff;
   color: #212121;
-  background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/floor-tile.png');
 }
 
-.feedback-form {
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  width: 600px;
-}
-
-.feedback-form textarea {
-  width: 100%;
-  resize: none;
-  font: inherit;
+.test-form label {
+  display: block;
 }

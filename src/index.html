@@ -7,16 +7,36 @@
     <title>JavaScript Essentials</title>
   </head>
   <body>
-    <form id="feedback-form" class="feedback-form">
-      <textarea
-        name="message"
-        cols="30"
-        rows="10"
-        placeholder="Please leave your feedback..."
-      ></textarea>
-      <button type="submit">Submit</button>
+    <form class="test-form">
+      <section>
+        <h2>Question 1</h2>
+        <label>
+          <input type="radio" name="q_1" value="0" />
+          Answer 1
+        </label>
+        <label>
+          <input type="radio" name="q_1" value="1" />
+          Answer 2
+        </label>
+      </section>
+
+      <section>
+        <h2>Question 2</h2>
+        <label>
+          <input type="radio" name="q_2" value="0" />
+          Answer 1
+        </label>
+        <label>
+          <input type="radio" name="q_2" value="1" />
+          Answer 2
+        </label>
+      </section>
+
+      <button type="submit" disabled>Submit</button>
     </form>
 
-    <ul class="post-feed"></ul>
+    <form class="quiz-form">
+      <button type="submit">Проверить</button>
+    </form>
   </body>
 </html>
