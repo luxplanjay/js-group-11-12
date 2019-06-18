@@ -5,38 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>JavaScript Essentials</title>
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <form class="test-form">
-      <section>
-        <h2>Question 1</h2>
-        <label>
-          <input type="radio" name="q_1" value="0" />
-          Answer 1
-        </label>
-        <label>
-          <input type="radio" name="q_1" value="1" />
-          Answer 2
-        </label>
-      </section>
+    <div class="timer">
+      <p class="clockface js-clockface">00:00:00</p>
 
-      <section>
-        <h2>Question 2</h2>
-        <label>
-          <input type="radio" name="q_2" value="0" />
-          Answer 1
-        </label>
-        <label>
-          <input type="radio" name="q_2" value="1" />
-          Answer 2
-        </label>
-      </section>
+      <div class="actions">
+        <button class="timer-btn" data-action="start-timer">Start</button>
+        <button class="timer-btn" data-action="stop-timer">Stop</button>
+      </div>
+    </div>
 
-      <button type="submit" disabled>Submit</button>
-    </form>
-
-    <form class="quiz-form">
-      <button type="submit">Проверить</button>
-    </form>
+    <script src="js/intro.js" type="module"></script>
+    <script src="js/timer.js" type="module"></script>
   </body>
 </html>
