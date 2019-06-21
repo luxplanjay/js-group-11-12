@@ -1,29 +1,25 @@
-// const logger = time => console.log(`Logging every ${time}ms ${Date.now()}`);
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const success = Math.random() > 0.5;
 
-// const timerId = setTimeout(logger, 2000, 2, 3);
-// const shouldCancelTimer = Math.random() > 0.3;
+    if (success) {
+      resolve('Promise resolved!');
+    } else {
+      reject('Promise rejected!');
+    }
+  }, 1000);
+});
 
-// console.log(shouldCancelTimer);
+console.log('before');
 
-// if (shouldCancelTimer) {
-//   clearTimeout(timerId);
-// }
+const onSuccess = message => {
+  console.log(message);
+};
 
-// console.log('LOG 3');
+const onError = error => {
+  console.error(`Error - ${error}`);
+};
 
-// console.log('before');
+promise.then(onSuccess).catch(onError);
 
-// let subscriptionCounter = 0;
-// const itervalId = setInterval(() => {
-//   if (subscriptionCounter === 3) {
-//     console.log('Stopping interval');
-//     clearInterval(itervalId);
-//     return;
-//   }
-
-//   console.log('Подпишись на рассылку!');
-//   subscriptionCounter += 1;
-//   console.log(subscriptionCounter);
-// }, 1000);
-
-// console.log('after');
+console.log('after');
