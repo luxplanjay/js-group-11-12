@@ -1,4 +1,2 @@
-import './js/swapi';
-// import './js/news';
-// import './js/apixu';
+import './js/news';
 import './css/styles.css';

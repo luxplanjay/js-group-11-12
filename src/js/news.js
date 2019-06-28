@@ -1,13 +1,55 @@
-// const baseUrl = 'https://newsapi.org/v2';
-// const resource = '/everything';
-// const queryString = '?q=bitcoin&from=2019-05-25&sortBy=publishedAt';
+import newsService from './services/news-service';
+import spinner from './spinner';
+import articleListItemsTemplate from '../templates/aticle-list-items.hbs';
 
-// fetch(baseUrl + resource + queryString, {
-//   headers: {
-//     Authorization: '5b88481e2156441382975efd19981185',
-//   },
-// })
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data);
-//   });
+const refs = {
+  searchForm: document.querySelector('#search-form'),
+  articleList: document.querySelector('#article-list'),
+  loadMoreBtn: document.querySelector('button[data-action="load-more"]'),
+};
+
+refs.searchForm.addEventListener('submit', searchFormSubmitHandler);
+refs.loadMoreBtn.addEventListener('click', loadMoreBtnHandler);
+
+function searchFormSubmitHandler(e) {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  const input = form.elements.query;
+
+  clearListItems();
+
+  newsService.resetPage();
+  newsService.searchQuery = input.value;
+  fetchArticles();
+
+  input.value = '';
+}
+
+function loadMoreBtnHandler() {
+  fetchArticles();
+}
+
+function fetchArticles() {
+  spinner.show();
+
+  newsService
+    .fetchArticles()
+    .then(articles => {
+      spinner.hide();
+      isertListItems(articles);
+    })
+    .catch(error => {
+      console.warn(error);
+    });
+}
+
+function isertListItems(items) {
+  const markup = articleListItemsTemplate(items);
+
+  refs.articleList.insertAdjacentHTML('beforeend', markup);
+}
+
+function clearListItems() {
+  refs.articleList.innerHTML = '';
+}
