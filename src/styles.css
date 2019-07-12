@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+.grid {
+  /* max-width: 1200px; */
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.grid-sizer,
+.grid-item {
+  width: 33.3333%;
+}
