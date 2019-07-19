@@ -1,0 +1,55 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.nametag {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.message-editor {
+  width: 560px;
+  display: flex;
+}
+
+.message-editor button {
+  font: inherit;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.message-editor input {
+  padding: 4px;
+  flex-grow: 1;
+  margin-right: 4px;
+  font: inherit;
+  resize: none;
+}
+
+.message-feed {
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  list-style: none;
+  margin-top: 24px;
+}
+
+.message-feed li {
+  font-size: 20px;
+}
+
+.message-feed li + li {
+  margin-top: 8px;
+}
